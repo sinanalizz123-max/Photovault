@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground">
+    <ImageView android:id="@+id/iv_photo"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="centerCrop" android:contentDescription="Photo"/>
+    <!-- Status badge -->
+    <TextView android:id="@+id/tv_status"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start" android:layout_margin="6dp"
+        android:textSize="9sp" android:textStyle="bold" android:paddingStart="6dp"
+        android:paddingEnd="6dp" android:paddingTop="2dp" android:paddingBottom="2dp"
+        android:background="@drawable/bg_pill" android:textColor="@color/accent_green"/>
+    <!-- Selection overlay -->
+    <View android:id="@+id/selection_overlay"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#4A4F8EF7" android:visibility="gone"/>
+    <ImageView android:id="@+id/iv_check"
+        android:layout_width="24dp" android:layout_height="24dp"
+        android:layout_gravity="top|end" android:layout_margin="4dp"
+        android:src="@drawable/ic_add" android:tint="@color/white"
+        android:visibility="gone" android:contentDescription="Selected"/>
+</FrameLayout>

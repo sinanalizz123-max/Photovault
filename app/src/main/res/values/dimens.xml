@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="app_bar_height">60dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="card_radius_sm">8dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">24dp</dimen>
+    <dimen name="drawer_width">290dp</dimen>
+    <dimen name="photo_grid_gap">2dp</dimen>
+    <dimen name="face_avatar_size">68dp</dimen>
+    <dimen name="upload_thumb_size">46dp</dimen>
+    <dimen name="fab_size">52dp</dimen>
+</resources>

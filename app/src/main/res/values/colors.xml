@@ -1,0 +1,51 @@
+<resources>
+    <!-- Dark theme -->
+    <color name="bg_dark">#0D0F14</color>
+    <color name="surface_dark">#151820</color>
+    <color name="surface2_dark">#1C2030</color>
+    <color name="surface3_dark">#242840</color>
+    <color name="card_dark">#181C28</color>
+    <color name="text_primary_dark">#E8EAF2</color>
+    <color name="text_secondary_dark">#8B90A8</color>
+    <color name="text_tertiary_dark">#555A72</color>
+    <color name="border_dark">#12FFFFFF</color>
+
+    <color name="status_uploaded">#4CAF50</color>
+    <color name="status_uploading">#2196F3</color>
+    <color name="status_failed">#F44336</color>
+    <color name="status_conflict">#FF9800</color>
+    <color name="status_local">#9E9E9E</color>
+    <color name="status_pending">#607D8B</color>
+
+    <!-- Light theme -->
+    <color name="bg_light">#F5F7FF</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface2_light">#EEF0F8</color>
+    <color name="surface3_light">#E4E6F2</color>
+    <color name="card_light">#FFFFFF</color>
+    <color name="text_primary_light">#1A1D2E</color>
+    <color name="text_secondary_light">#5C5F74</color>
+    <color name="text_tertiary_light">#9799AB</color>
+    <color name="border_light">#18000000</color>
+
+    <!-- Accents (same for both themes) -->
+    <color name="accent_blue">#4F8EF7</color>
+    <color name="accent_purple">#7B5CF0</color>
+    <color name="accent_red">#F75F4F</color>
+    <color name="accent_green">#3DD68C</color>
+    <color name="accent_yellow">#F5C842</color>
+
+    <!-- Account colors -->
+    <color name="account_a_start">#4F8EF7</color>
+    <color name="account_a_end">#6FA8FF</color>
+    <color name="account_b_start">#F75F4F</color>
+    <color name="account_b_end">#FF8566</color>
+    <color name="account_c_start">#3DD68C</color>
+    <color name="account_c_end">#5BE8A0</color>
+
+    <!-- Common -->
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="status_bar_color">#00000000</color>
+</resources>

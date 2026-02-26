@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="?attr/colorSurface">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="8dp" android:paddingEnd="16dp" android:background="?attr/colorSurface" android:elevation="4dp">
+        <ImageButton android:id="@+id/btn_back" android:layout_width="40dp" android:layout_height="40dp"
+            android:src="@drawable/ic_back" android:background="@drawable/bg_pill"
+            android:padding="8dp" android:tint="?attr/colorOnSurface" android:contentDescription="Back"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Compression" android:textSize="20sp"
+            android:textStyle="bold" android:textColor="?attr/colorOnSurface" android:paddingStart="12dp"/>
+        <Button android:id="@+id/btn_save" android:layout_width="wrap_content" android:layout_height="36dp"
+            android:text="Save" android:textSize="12sp" android:background="@drawable/bg_gradient_accent"
+            android:textColor="@color/white" style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingTop="8dp" android:paddingBottom="32dp">
+
+            <!-- IMAGES SECTION -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="IMAGES" android:textSize="10sp" android:textStyle="bold"
+                android:textColor="#555A72" android:letterSpacing="0.1"
+                android:paddingStart="16dp" android:paddingTop="14dp" android:paddingBottom="6dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeColor="#12FFFFFF" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <!-- No Compression toggle -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="No Compression (Original)" android:textSize="14sp"
+                                android:textColor="?attr/colorOnSurface" android:textStyle="bold"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Upload at full original quality" android:textSize="11sp" android:textColor="#8B90A8"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_no_compression_image"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:checked="false" android:thumbTint="@color/accent_blue" android:trackTint="@color/accent_blue"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#0CFFFFFF" android:layout_marginTop="8dp" android:layout_marginBottom="12dp"/>
+
+                    <!-- Quality Slider -->
+                    <LinearLayout android:id="@+id/quality_section" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="JPEG Quality"
+                                android:textSize="14sp" android:textColor="?attr/colorOnSurface" android:textStyle="bold"/>
+                            <TextView android:id="@+id/tv_quality_val"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="85%" android:textSize="20sp" android:textStyle="bold"
+                                android:textColor="@color/accent_blue"/>
+                        </LinearLayout>
+                        <SeekBar android:id="@+id/seek_quality"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:max="100" android:progress="85" android:min="10"
+                            android:thumbTint="@color/accent_blue" android:progressTint="@color/accent_blue"
+                            android:secondaryProgressTint="#242840"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginTop="4dp">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="Smaller" android:textSize="10sp" android:textColor="#555A72"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="Balanced" android:textSize="10sp"
+                                android:textColor="#555A72" android:gravity="center"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="Original" android:textSize="10sp"
+                                android:textColor="#555A72" android:gravity="end"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Image resolution option -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#0CFFFFFF" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Max Resolution (Images)" android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:layout_marginBottom="10dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:id="@+id/image_res_group">
+                        <Button android:id="@+id/btn_img_res_original"
+                            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                            android:text="Original" android:textSize="11sp" android:background="@drawable/bg_gradient_accent"
+                            android:textColor="@color/white" android:layout_marginEnd="4dp"
+                            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+                        <Button android:id="@+id/btn_img_res_4k"
+                            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                            android:text="4K" android:textSize="11sp" android:background="@drawable/bg_pill"
+                            android:textColor="?attr/colorOnSurface" android:layout_marginEnd="4dp"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                        <Button android:id="@+id/btn_img_res_fhd"
+                            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                            android:text="FHD" android:textSize="11sp" android:background="@drawable/bg_pill"
+                            android:textColor="?attr/colorOnSurface" android:layout_marginEnd="4dp"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                        <Button android:id="@+id/btn_img_res_hd"
+                            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                            android:text="HD" android:textSize="11sp" android:background="@drawable/bg_pill"
+                            android:textColor="?attr/colorOnSurface"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- VIDEOS SECTION -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="VIDEOS" android:textSize="10sp" android:textStyle="bold"
+                android:textColor="#555A72" android:letterSpacing="0.1"
+                android:paddingStart="16dp" android:paddingTop="4dp" android:paddingBottom="6dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeColor="#12FFFFFF" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <!-- No Compression video -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="No Compression (Original)" android:textSize="14sp"
+                                android:textColor="?attr/colorOnSurface" android:textStyle="bold"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Upload original video file" android:textSize="11sp" android:textColor="#8B90A8"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_no_compression_video"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:checked="false" android:thumbTint="@color/accent_blue" android:trackTint="@color/accent_blue"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#0CFFFFFF" android:layout_marginTop="8dp" android:layout_marginBottom="12dp"/>
+
+                    <!-- Video resolution -->
+                    <LinearLayout android:id="@+id/video_compression_section" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Max Resolution" android:textSize="14sp"
+                            android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:layout_marginBottom="10dp"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:id="@+id/video_res_group">
+                            <Button android:id="@+id/btn_480p"
+                                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                                android:text="480p" android:textSize="11sp" android:background="@drawable/bg_pill"
+                                android:textColor="?attr/colorOnSurface" android:layout_marginEnd="4dp"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                            <Button android:id="@+id/btn_720p"
+                                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                                android:text="720p" android:textSize="11sp" android:background="@drawable/bg_pill"
+                                android:textColor="?attr/colorOnSurface" android:layout_marginEnd="4dp"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                            <Button android:id="@+id/btn_1080p"
+                                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                                android:text="1080p" android:textSize="11sp" android:background="@drawable/bg_gradient_accent"
+                                android:textColor="@color/white" android:layout_marginEnd="4dp"
+                                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+                            <Button android:id="@+id/btn_4k"
+                                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                                android:text="4K" android:textSize="11sp" android:background="@drawable/bg_pill"
+                                android:textColor="?attr/colorOnSurface"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp"
+                            android:background="#0CFFFFFF" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                        <!-- Bitrate slider -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="Video Bitrate"
+                                android:textSize="14sp" android:textColor="?attr/colorOnSurface" android:textStyle="bold"/>
+                            <TextView android:id="@+id/tv_bitrate_val"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="8 Mbps" android:textSize="20sp" android:textStyle="bold"
+                                android:textColor="@color/accent_blue"/>
+                        </LinearLayout>
+                        <SeekBar android:id="@+id/seek_bitrate"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:max="50" android:progress="8" android:min="1"
+                            android:thumbTint="@color/accent_blue" android:progressTint="@color/accent_blue"
+                            android:secondaryProgressTint="#242840"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Estimated savings -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ESTIMATED SAVINGS" android:textSize="10sp" android:textStyle="bold"
+                android:textColor="#555A72" android:letterSpacing="0.1"
+                android:paddingStart="16dp" android:paddingTop="4dp" android:paddingBottom="6dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                    android:padding="16dp" android:background="@drawable/bg_pill" android:layout_marginEnd="8dp">
+                    <TextView android:id="@+id/tv_savings_pct"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="~40%" android:textSize="22sp" android:textStyle="bold"
+                        android:textColor="@color/accent_green"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Size reduction" android:textSize="10sp" android:textColor="#8B90A8"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                    android:padding="16dp" android:background="@drawable/bg_pill">
+                    <TextView android:id="@+id/tv_savings_size"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="3.2 GB" android:textSize="22sp" android:textStyle="bold"
+                        android:textColor="@color/accent_blue"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Space saved" android:textSize="10sp" android:textColor="#8B90A8"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

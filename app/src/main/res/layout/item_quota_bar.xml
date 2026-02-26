@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:layout_marginBottom="8dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="4dp">
+        <TextView android:id="@+id/tv_account" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:textSize="11sp" android:textColor="#8B90A8"/>
+        <TextView android:id="@+id/tv_usage" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="11sp" android:textColor="#8B90A8"/>
+    </LinearLayout>
+    <ProgressBar android:id="@+id/progress_quota"
+        android:layout_width="match_parent" android:layout_height="6dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressTint="@color/accent_blue"
+        android:progressBackgroundTint="#242840" android:max="9000"/>
+    <TextView android:id="@+id/tv_quota_warning"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="10sp" android:textColor="@color/accent_red"
+        android:visibility="gone" android:layout_marginTop="2dp"/>
+</LinearLayout>

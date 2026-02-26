@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0D0F14">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:orientation="vertical" android:gravity="center" android:padding="32dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PhotoVault" android:textSize="42sp" android:textStyle="bold"
+            android:textColor="@color/accent_blue" android:fontFamily="sans-serif-black"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Multi-Account Photo Manager" android:textSize="14sp"
+            android:textColor="#8B90A8" android:layout_marginTop="8dp"/>
+        <ProgressBar android:layout_width="48dp" android:layout_height="48dp"
+            android:layout_marginTop="48dp" android:indeterminateTint="@color/accent_blue"/>
+    </LinearLayout>
+</FrameLayout>

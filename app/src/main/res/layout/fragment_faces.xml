@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_pill"
+        android:padding="3dp">
+
+        <Button
+            android:id="@+id/btn_local"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="📱 Local"
+            android:textSize="13sp"
+            android:background="@drawable/bg_pill_active"
+            android:textColor="?attr/colorOnSurface"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        <Button
+            android:id="@+id/btn_cloud"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="☁️ Cloud"
+            android:textSize="13sp"
+            android:background="@android:color/transparent"
+            android:textColor="#8B90A8"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_privacy_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔒  Face data stays on device · Used for routing only"
+        android:textSize="12sp"
+        android:textColor="@color/accent_blue"
+        android:background="#1A4F8EF7"
+        android:padding="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="4dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_faces"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+</LinearLayout>
